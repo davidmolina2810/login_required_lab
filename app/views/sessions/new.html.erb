@@ -1,0 +1,13 @@
+<h1>Login<h1>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |msg| %>
+    <p style="color:red"><%=msg%></p>
+  <%end%>
+<%end%>
+
+
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+  Name: <%= text_field_tag :name %>
+  <div><%= submit_tag 'Login' %></div>
+<%end%>
